@@ -4,13 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>TODO</title>
+    <title><%= full_title(yield(:page_title))  %> </title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+      <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
   <body>
+   <header class="navbar">
+      <div class="container">
+        <%= link_to "Logo", root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",  root_path %></li>
+            <li><%= link_to "Recipies",   '#' %></li>
+            <li><%= link_to "Blog", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <% if logged_in? %>
+    <%= link_to "logout", logout_path %>
+    <% end %>
+  <div class="container">
     <%= yield %>
+ <%= render 'layouts/footer' %>
+ </div>
     <%= javascript_include_tag 'application' %>
+
   </body>
 </html>

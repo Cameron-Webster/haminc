@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'turbolinks',   '5.0.1'
+gem 'bcrypt',         '3.1.11'
 
 gem 'sass-rails'
 gem 'jquery-rails'

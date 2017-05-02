@@ -1,0 +1,13 @@
+<div class="col-sm-6 col-lg-4">
+
+<div class="card">
+  <div class="card-topper">
+    <div class="card-block">
+      <h4><%= link_to post.title, post %></h4>
+      <p><%= truncate(post.meta, length: 130) %></p>
+      <%= linkt_to 'read', post, class: 'btn btn-read' %>
+    </div>
+  </div>
+</div>
+
+</div>
